@@ -179,6 +179,30 @@ document.addEventListener('DOMContentLoaded', function () {
             background: #64b5f6;
             border-radius: 1px;
         }
+        
+        .btn-highlighted {
+            animation: pulse-highlight 1.5s ease-in-out infinite;
+            position: relative;
+            z-index: 1000;
+        }
+        
+        @keyframes pulse-highlight {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(100, 181, 246, 0.8);
+                background: linear-gradient(135deg, #64b5f6, #42a5f5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(100, 181, 246, 0);
+                background: linear-gradient(135deg, #81c784, #4caf50);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(100, 181, 246, 0);
+                background: linear-gradient(135deg, #64b5f6, #42a5f5);
+            }
+        }
     `;
     document.head.appendChild(style);
 
@@ -200,15 +224,61 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.textContent = 'Code Copied! ✓';
                 this.style.backgroundColor = '#4caf50';
 
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    this.textContent = 'Copy Demo Code';
+                    this.style.backgroundColor = '';
+                }, 3000);
+
             } catch (error) {
                 console.error('Failed to copy code:', error);
 
                 // Fallback: show error message
                 this.textContent = 'Copy Failed - Try Again';
                 this.style.backgroundColor = '#f44336';
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    this.textContent = 'Copy Demo Code';
+                    this.style.backgroundColor = '';
+                }, 3000);
             }
         });
     }
+
+    // Handle URL parameters for button highlighting
+    function handleButtonHighlight() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const highlightParam = urlParams.get('highlight');
+
+        if (highlightParam === 'copyBtn') {
+            // Small delay to ensure page is fully loaded
+            setTimeout(() => {
+                const copyBtn = document.getElementById('copyDemoCode');
+                if (copyBtn) {
+                    // Scroll to the button
+                    copyBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Add highlight effect
+                    highlightButton(copyBtn);
+                }
+            }, 500);
+        }
+    }
+
+    // Function to highlight the button with visual effects
+    function highlightButton(button) {
+        // Add highlight class
+        button.classList.add('btn-highlighted');
+
+        // Remove highlight after animation (longer duration for better visibility)
+        setTimeout(() => {
+            button.classList.remove('btn-highlighted');
+        }, 6000); // Increased from 4000 to 6000ms
+    }
+
+    // Call the highlight handler on page load
+    handleButtonHighlight();
 
     // Console message for developers
     console.log(`
