@@ -50,34 +50,35 @@
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">About CelestialSim</h2>
-                <div class="about-grid">
+                <div class="about-content-grid">
                     <div class="about-text">
                         <p>
-                            CelestialSim represents cutting-edge technology in procedural planet generation and
-                            simulation.
-                            Our platform combines advanced computer graphics techniques with real-time rendering to
-                            create
-                            immersive, interactive planetary environments.
+                            CelestialSim is a powerful tool designed for Godot that enables rapid procedural terrain
+                            generation and simulation.
+                            It leverages dynamic Level-of-Detail (LOD) to
+                            ensure smooth,
+                            real-time rendering even for complex planetary environments.
                         </p>
                         <p>
-                            Built with modern GPU compute shaders and innovative Level-of-Detail algorithms,
-                            CelestialSim
-                            delivers unprecedented performance and visual fidelity in planetary simulation.
+                            What sets CelestialSim apart is its LLMs and AI-ready architecture. The tool creates
+                            embedding-compatible
+                            representations of generated worlds, making it seamlessly integrate with AI models for
+                            intelligent
+                            exploration and content discovery. This opens up exciting possibilities for automated
+                            terrain analysis,
+                            point-of-interest detection, and AI-assisted world building.
+                        </p>
+                        <p>
+                            Whether you're developing expansive open-world games or need dynamic terrain for simulation
+                            purposes,
+                            CelestialSim provides the foundation for creating immersive, procedurally generated
+                            environments
+                            with cutting-edge performance and AI integration capabilities.
                         </p>
                     </div>
-                    <div class="stats">
-                        <div class="stat">
-                            <h3>6M+</h3>
-                            <p>Triangles Rendered</p>
-                        </div>
-                        <div class="stat">
-                            <h3>60 FPS</h3>
-                            <p>Real-time Performance</p>
-                        </div>
-                        <div class="stat">
-                            <h3>9 Levels</h3>
-                            <p>Dynamic LOD</p>
-                        </div>
+                    <div class="about-images">
+                        <img src="media/image1.webp" alt="CelestialSim Terrain Generation" class="about-image">
+                        <img src="media/image2.webp" alt="CelestialSim Procedural Features" class="about-image">
                     </div>
                 </div>
             </div>
@@ -88,38 +89,53 @@
                 <h2 class="section-title">Key Features</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🌍</div>
-                        <h3>Dynamic LOD</h3>
-                        <p>Adaptive Level-of-Detail rendering that automatically adjusts mesh complexity based on camera
-                            distance and viewing angle.</p>
+                        <div class="feature-visual">
+                            <video src="media/mode1.webm" autoplay muted loop class="feature-image"></video>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon">🌍</div>
+                            <h3>Dynamic LOD</h3>
+                            <p>Adaptive Level-of-Detail rendering that automatically adjusts mesh complexity based on
+                                camera distance and viewing angle for optimal performance.</p>
+                        </div>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🌊</div>
-                        <h3>Water Simulation</h3>
-                        <p>Interactive water bodies with realistic rendering, including shimmer effects and specular
-                            highlighting.</p>
+                        <div class="feature-visual">
+                            <video src="media/mode2.webm" autoplay muted loop class="feature-image"></video>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon">🌊</div>
+                            <h3>Interactive Simulation</h3>
+                            <p>Real-time interactive environments with dynamic water bodies, realistic rendering, and
+                                responsive terrain modifications.</p>
+                        </div>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🌲</div>
-                        <h3>Ecosystem Generation</h3>
-                        <p>Procedural tree placement based on terrain similarity, humidity, and height factors for
-                            realistic biomes.</p>
+                        <div class="feature-visual">
+                            <video src="media/mode3.webm" autoplay muted loop class="feature-image"></video>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon">🌲</div>
+                            <h3>Example-Based Procedural Generation</h3>
+                            <p>Intelligent procedural content generation using example patterns for terrain similarity,
+                                biome distribution, and realistic ecosystem placement.</p>
+                        </div>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>GPU Acceleration</h3>
-                        <p>Compute shader-based generation and simulation for maximum performance and scalability.</p>
+                        <div class="feature-content full-content">
+                            <div class="feature-icon">⚡</div>
+                            <h3>GPU Acceleration</h3>
+                            <p>Compute shader-based generation and simulation for maximum performance and scalability
+                                across different hardware configurations.</p>
+                        </div>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🎮</div>
-                        <h3>Interactive Editing</h3>
-                        <p>Real-time terrain modification with click-to-place water bodies and vegetation systems.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔧</div>
-                        <h3>Multiple Showcases</h3>
-                        <p>LOD demonstration, ecosystem simulation, and procedural generation showcases in one platform.
-                        </p>
+                        <div class="feature-content full-content">
+                            <div class="feature-icon">🤖</div>
+                            <h3>Ready for AI</h3>
+                            <p>Leveraging advanced embedding technologies to intelligently generate, search, and
+                                organize 3D objects and terrain features for enhanced procedural generation.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,7 +147,8 @@
                 <div class="demo-container">
                     <div class="demo-placeholder">
                         <h3>Try CelestialSim Now</h3>
-                        <p>Experience the full CelestialSim simulation directly in your browser using Slang Playground.
+                        <p>Experience the full CelestialSim key features directly in your browser using Slang
+                            Playground.
                         </p>
 
                         <div class="demo-instructions">
@@ -154,15 +171,6 @@
                                 <li>Replace the code in the playground</li>
                                 <li>Run and interact with the simulation!</li>
                             </ol>
-                        </div>
-
-                        <div class="demo-features">
-                            <ul>
-                                <li>Real-time planet generation</li>
-                                <li>Interactive water placement</li>
-                                <li>Dynamic ecosystem simulation</li>
-                                <li>Multiple viewing modes</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
