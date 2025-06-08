@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const navItems = document.querySelectorAll('.nav-links a');
 
     function updateActiveNav() {
-        const scrollPosition = window.scrollY + 100;
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        const scrollPosition = window.scrollY + headerHeight + 20; // Use actual header height + small buffer
 
         sections.forEach((section, index) => {
             const sectionTop = section.offsetTop;
