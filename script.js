@@ -280,6 +280,66 @@ document.addEventListener('DOMContentLoaded', function () {
     // Call the highlight handler on page load
     handleButtonHighlight();
 
+    // Reddit embed script loading with optimization
+    function loadRedditEmbeds() {
+        // Check if Reddit embeds exist on the page
+        const redditEmbeds = document.querySelectorAll('.reddit-embed-bq');
+
+        if (redditEmbeds.length > 0) {
+            // Check if script is already loaded
+            if (!document.querySelector('script[src*="embed.reddit.com"]')) {
+                const script = document.createElement('script');
+                script.src = 'https://embed.reddit.com/widgets.js';
+                script.async = true;
+                script.charset = 'UTF-8';
+
+                script.onload = function () {
+                    console.log('Reddit embeds loaded successfully');
+                };
+
+                script.onerror = function () {
+                    console.warn('Failed to load Reddit embeds');
+                    // Optionally show fallback content
+                    redditEmbeds.forEach(embed => {
+                        const fallback = document.createElement('div');
+                        fallback.className = 'reddit-embed-fallback';
+                        fallback.innerHTML = '<p>Reddit embed temporarily unavailable. <a href="' +
+                            embed.querySelector('a').href + '" target="_blank">View on Reddit</a></p>';
+                        embed.parentNode.replaceChild(fallback, embed);
+                    });
+                };
+
+                document.head.appendChild(script);
+            }
+        }
+    }
+
+    // Lazy load Reddit embeds when they come into view
+    function initLazyRedditEmbeds() {
+        const redditEmbeds = document.querySelectorAll('.reddit-embed-bq');
+
+        if (redditEmbeds.length > 0 && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadRedditEmbeds();
+                        observer.disconnect(); // Only load once
+                    }
+                });
+            }, {
+                rootMargin: '50px' // Load when 50px before entering viewport
+            });
+
+            redditEmbeds.forEach(embed => observer.observe(embed));
+        } else {
+            // Fallback for browsers without IntersectionObserver
+            loadRedditEmbeds();
+        }
+    }
+
+    // Initialize lazy loading instead of immediate loading
+    initLazyRedditEmbeds();
+
     // Console message for developers
     console.log(`
     🌍 CelestialSim - Advanced Procedural Planet Simulation
