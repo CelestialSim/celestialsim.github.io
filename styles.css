@@ -156,13 +156,17 @@ body {
 }
 
 .btn-accent {
-    background: linear-gradient(135deg, #7c4dff, #651fff);
-    color: white;
+    background: linear-gradient(135deg, #7c4dff, #651fff) !important;
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    border: none !important;
 }
 
 .btn-accent:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(124, 77, 255, 0.3);
+    color: white !important;
+    background: linear-gradient(135deg, #8b5dff, #7c4dff) !important;
 }
 
 /* Button highlight animation for demo links */
@@ -522,9 +526,16 @@ body {
 
 .inline-btn {
     margin: 0 !important;
-    padding: 0.5rem 1rem !important;
-    font-size: 0.9rem !important;
+    padding: 0.75rem 1.25rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
     white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure accent inline buttons have proper colors */
+.btn-accent.inline-btn {
+    color: white !important;
 }
 
 .demo-instructions a {
@@ -569,6 +580,27 @@ body {
 .copy-demo-btn:active::before {
     width: 300px;
     height: 300px;
+}
+
+/* Browser compatibility notice */
+.browser-compatibility {
+    background: rgba(100, 181, 246, 0.08);
+    border: 1px solid rgba(100, 181, 246, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.browser-compatibility p {
+    color: #81c7f7;
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.browser-compatibility strong {
+    color: #64b5f6;
 }
 
 /* Team Section */
@@ -644,27 +676,6 @@ body {
 }
 
 .member-avatar::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, #64b5f6, #42a5f5, #1976d2);
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.team-member:hover .member-avatar {
-    transform: translateY(-5px) rotate(5deg) scale(1.1);
-    box-shadow:
-        0 15px 35px rgba(100, 181, 246, 0.4),
-        inset 0 -5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.team-member:hover .member-avatar::after {
     opacity: 1;
 }
 
