@@ -33,6 +33,14 @@
             { url: 'https://www.linkedin.com/in/emanuele-orlando-0864a5282/', label: '💼 LinkedIn' }
           ]"
         />
+        <TeamMember
+          name="BackupMiles"
+          role="Documentation"
+          description="Documentation generation from articles and API reference"
+          :links="[
+            { url: 'https://github.com/BackupMiles', label: '🐙 GitHub' }
+          ]"
+        />
         <div class="contribute-card">
           <div class="contribute-icon">🚀</div>
           <h3>Your Name Here?</h3>
