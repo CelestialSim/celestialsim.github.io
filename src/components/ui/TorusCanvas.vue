@@ -24,7 +24,7 @@ onMounted(() => {
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  const RING = '#2e2a47' // dark violet, close to the background
+  const RING = '#19292b' // dark teal
 
   // Torus geometry (px) + camera
   const Nu = 90

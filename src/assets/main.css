@@ -3,18 +3,18 @@
 
 /* ============================================================
    CelestialSim — cartographic instrument
-   Layout: quiet dark panels, gold/teal elevation accents,
+   Layout: quiet dark panels, cohesive blue accents,
    IBM Plex Mono for engine terminology, Archivo display.
    ============================================================ */
 
 /* ---- Selection & links ---- */
 ::selection {
-  background: rgba(200, 162, 75, 0.28);
+  background: rgba(120, 160, 240, 0.28);
   color: var(--snow);
 }
 
 a {
-  color: var(--terra-bright);
+  color: var(--accent-bright);
   text-decoration: none;
 }
 
@@ -107,13 +107,13 @@ video {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--terra-bright), var(--terra));
+  background: linear-gradient(135deg, var(--accent-bright), var(--accent));
   color: var(--abyss);
-  box-shadow: 0 0 0 rgba(200, 162, 75, 0);
+  box-shadow: 0 0 0 rgba(59, 130, 246, 0);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 22px rgba(200, 162, 75, 0.3);
+  box-shadow: 0 6px 22px rgba(59, 130, 246, 0.35);
   filter: brightness(1.06);
 }
 
@@ -124,8 +124,8 @@ video {
 }
 
 .btn-secondary:hover {
-  border-color: var(--terra);
-  background: rgba(200, 162, 75, 0.08);
+  border-color: var(--accent-bright);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .btn-ghost {
@@ -136,7 +136,7 @@ video {
 }
 
 .btn-ghost:hover {
-  color: var(--sea-bright);
+  color: var(--accent-bright);
 }
 
 /* ============================================================
@@ -176,7 +176,7 @@ video {
 }
 
 .nav-brand h1 .brand-dot {
-  color: var(--terra);
+  color: var(--accent);
 }
 
 .nav-links {
@@ -210,7 +210,7 @@ video {
   right: 0;
   bottom: -3px;
   height: 2px;
-  background: var(--terra);
+  background: var(--accent);
 }
 
 /* ============================================================
@@ -224,7 +224,7 @@ video {
   overflow: hidden;
   background:
     radial-gradient(1100px 700px at 78% 18%, rgba(46, 140, 140, 0.16), transparent 60%),
-    radial-gradient(900px 700px at 12% 90%, rgba(200, 162, 75, 0.1), transparent 55%),
+    radial-gradient(900px 700px at 12% 90%, rgba(120, 160, 240, 0.1), transparent 55%),
     var(--abyss);
 }
 
@@ -233,7 +233,7 @@ video {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%23c8a24b' stroke-width='1' stroke-opacity='0.06'%3E%3Ccircle cx='300' cy='300' r='60'/%3E%3Ccircle cx='300' cy='300' r='120'/%3E%3Ccircle cx='300' cy='300' r='180'/%3E%3Ccircle cx='300' cy='300' r='240'/%3E%3Ccircle cx='300' cy='300' r='300'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%234d8bf5' stroke-width='1' stroke-opacity='0.06'%3E%3Ccircle cx='300' cy='300' r='60'/%3E%3Ccircle cx='300' cy='300' r='120'/%3E%3Ccircle cx='300' cy='300' r='180'/%3E%3Ccircle cx='300' cy='300' r='240'/%3E%3Ccircle cx='300' cy='300' r='300'/%3E%3C/g%3E%3C/svg%3E");
   background-position: 78% 18%;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -277,7 +277,7 @@ video {
 }
 
 .hero-title .accent {
-  color: var(--terra);
+  color: var(--accent);
 }
 
 .hero-sub {
@@ -313,7 +313,7 @@ video {
 }
 
 .spec-bar span b {
-  color: var(--terra);
+  color: var(--accent);
   font-weight: 500;
 }
 
@@ -340,9 +340,9 @@ video {
   transform: translate(-50%, -50%);
   animation: planet-rotate 90s linear infinite;
   background:
-    radial-gradient(circle at 32% 28%, var(--terra-bright) 0 6%, transparent 7%),
+    radial-gradient(circle at 32% 28%, var(--accent-bright) 0 6%, transparent 7%),
     radial-gradient(circle at 64% 62%, var(--veg) 0 9%, transparent 10%),
-    radial-gradient(circle at 50% 40%, rgba(226, 186, 99, 0.55) 0 22%, transparent 24%),
+    radial-gradient(circle at 50% 40%, rgba(120, 160, 240, 0.55) 0 22%, transparent 24%),
     linear-gradient(150deg, #0f3b45 0%, #16576a 45%, #0d2c3a 100%);
   box-shadow:
     0 0 60px rgba(46, 140, 140, 0.28),
@@ -456,7 +456,7 @@ video {
 .cap-card--wide {
   grid-column: 1 / -1;
   background:
-    radial-gradient(700px 200px at 100% 0%, rgba(200, 162, 75, 0.08), transparent 70%),
+    radial-gradient(700px 200px at 100% 0%, rgba(120, 160, 240, 0.08), transparent 70%),
     var(--panel);
 }
 
@@ -526,7 +526,7 @@ video {
 }
 
 .flowchart .node-gpu { stroke: var(--sea); }
-.flowchart .node-cpu { stroke: var(--terra); }
+.flowchart .node-cpu { stroke: var(--accent); }
 
 .flowchart .t-title {
   fill: var(--snow);
@@ -542,7 +542,7 @@ video {
 }
 
 .flowchart .t-gpu { fill: var(--sea-bright); }
-.flowchart .t-cpu { fill: var(--terra-bright); }
+.flowchart .t-cpu { fill: var(--accent-bright); }
 .flowchart .t-mid {
   fill: var(--snow-dim);
   font-family: var(--font-mono);
@@ -558,7 +558,7 @@ video {
 }
 
 .flowchart .flow-gpu { stroke: var(--sea); }
-.flowchart .flow-cpu { stroke: var(--terra); }
+.flowchart .flow-cpu { stroke: var(--accent); }
 .flowchart .flow-out { stroke: var(--snow-dim); }
 .flowchart .flow-ghost {
   stroke: var(--sea);
@@ -567,7 +567,7 @@ video {
 }
 
 .flowchart .mk-gpu { fill: var(--sea); }
-.flowchart .mk-cpu { fill: var(--terra); }
+.flowchart .mk-cpu { fill: var(--accent); }
 .flowchart .mk-out { fill: var(--snow-dim); }
 
 @keyframes flowchart-dash {
@@ -630,7 +630,7 @@ video {
 .step-num {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--terra);
+  color: var(--accent);
   letter-spacing: 0.1em;
   display: block;
   margin-bottom: 1rem;
@@ -654,8 +654,8 @@ video {
 .demo-note code {
   font-family: var(--font-mono);
   font-size: 0.86em;
-  color: var(--terra-bright);
-  background: rgba(200, 162, 75, 0.1);
+  color: var(--accent-bright);
+  background: rgba(120, 160, 240, 0.1);
   padding: 0.1em 0.4em;
   border-radius: 4px;
 }
@@ -684,8 +684,8 @@ video {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--terra);
-  box-shadow: 0 0 8px var(--terra);
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
 }
 
 /* ============================================================
@@ -761,7 +761,7 @@ video {
 }
 
 .demo-downloads a:hover {
-  border-bottom-color: var(--terra);
+  border-bottom-color: var(--accent);
 }
 
 /* ============================================================
@@ -817,7 +817,7 @@ video {
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--sea), var(--terra));
+  background: linear-gradient(135deg, var(--sea), var(--accent));
   margin-bottom: 1.2rem;
   position: relative;
 }
@@ -872,7 +872,7 @@ video {
 }
 
 .member-link:hover {
-  color: var(--terra);
+  color: var(--accent);
   border-color: var(--line-strong);
 }
 
@@ -964,14 +964,14 @@ video {
 }
 
 .footer-links a:hover {
-  color: var(--terra);
+  color: var(--accent);
 }
 
 /* ============================================================
    Particles (injected) — recoloured to dust motes
    ============================================================ */
 .particle {
-  background: rgba(200, 162, 75, 0.35) !important;
+  background: rgba(120, 160, 240, 0.35) !important;
 }
 
 /* ============================================================
