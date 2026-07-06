@@ -1,4 +1,4 @@
-import { onMounted, nextTick } from 'vue'
+import { nextTick } from 'vue'
 
 export function useScrollEffects() {
   const initSmoothScrolling = () => {
@@ -65,64 +65,17 @@ export function useScrollEffects() {
     return () => window.removeEventListener('scroll', handleScroll)
   }
 
-  const initFadeInAnimations = () => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    }
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          (entry.target as HTMLElement).style.opacity = '1';
-          (entry.target as HTMLElement).style.transform = 'translateY(0)'
-        }
-      })
-    }, observerOptions)
-
-    const animatedElements = document.querySelectorAll('.feature-card, .team-member, .stat')
-    animatedElements.forEach(el => {
-      (el as HTMLElement).style.opacity = '0';
-      (el as HTMLElement).style.transform = 'translateY(30px)';
-      (el as HTMLElement).style.transition = 'opacity 0.6s ease, transform 0.6s ease'
-      observer.observe(el)
-    })
-
-    return observer
-  }
-
-  const initHoverEffects = () => {
-    const stats = document.querySelectorAll('.stat')
-    stats.forEach(stat => {
-      stat.addEventListener('mouseenter', function (this: HTMLElement) {
-        this.style.transform = 'scale(1.05)'
-      })
-
-      stat.addEventListener('mouseleave', function (this: HTMLElement) {
-        this.style.transform = 'scale(1)'
-      })
-    })
-
-    const elements = document.querySelectorAll('.btn, .feature-card, .team-member, .contact-link')
-    elements.forEach(el => {
-      (el as HTMLElement).style.transition = 'all 0.3s ease'
-    })
-  }
-
   const initScrollEffects = async () => {
     await nextTick()
-    
+
     initSmoothScrolling()
     window.addEventListener('scroll', updateActiveNav)
     updateActiveNav()
-    
+
     const cleanupParallax = initParallaxEffect()
-    const observer = initFadeInAnimations()
-    initHoverEffects()
 
     return () => {
       cleanupParallax()
-      observer.disconnect()
       window.removeEventListener('scroll', updateActiveNav)
     }
   }

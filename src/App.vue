@@ -2,7 +2,6 @@
 import { onMounted } from 'vue'
 import { useScrollEffects } from './composables/useScrollEffects'
 import { useParticles } from './composables/useParticles'
-import { useNavigation } from './composables/useNavigation'
 import { useRedditEmbeds } from './composables/useRedditEmbeds'
 
 // Layout Components
@@ -21,16 +20,12 @@ import ContributeSection from './components/sections/ContributeSection.vue'
 onMounted(async () => {
   const { initScrollEffects } = useScrollEffects()
   const { initParticleSystem } = useParticles()
-  const { handleButtonHighlight, initTypingEffect, initPerformanceMonitoring } = useNavigation()
   const { initLazyRedditEmbeds } = useRedditEmbeds()
 
   // Initialize all systems
   const cleanupScrollEffects = await initScrollEffects()
   const cleanupParticles = initParticleSystem()
-  
-  handleButtonHighlight()
-  initTypingEffect()
-  initPerformanceMonitoring()
+
   initLazyRedditEmbeds()
 
   // Cleanup on unmount
@@ -49,8 +44,8 @@ onMounted(async () => {
       <HeroSection />
       <AboutSection />
       <FeaturesSection />
-      <DemoSection />
       <GodotSection />
+      <DemoSection />
       <NewsSection />
       <ContributeSection />
     </main>

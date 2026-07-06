@@ -1,60 +1,60 @@
 <template>
   <section id="contribute" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Contribute</h2>
-      <div class="contribute-intro">
-        <p>CelestialSim is built by a passionate community of developers who believe in open source
-          procedural generation. <strong>Join us and help shape the future of planetary
-            simulation!</strong></p>
+      <div class="section-head">
+        <p class="eyebrow">Contribute</p>
+        <h2 class="section-title">Built in the open</h2>
+        <p class="section-intro contribute-intro">
+          CelestialSim is built by a small, open community. Whether you write code, make art, or just
+          love procedural worlds, there's room to help shape where it goes.
+        </p>
       </div>
       <div class="team-grid">
         <TeamMember
           name="Calonca"
           role="Main Developer"
-          description="Core architect and lead developer of CelestialSim, responsible for the main engine development and system architecture."
+          description="Core architect and lead developer, responsible for the engine and system architecture."
           :links="[
-            { url: 'https://github.com/Calonca', label: '🐙 GitHub' },
-            { url: 'https://www.linkedin.com/in/alessandro-la-conca/', label: '💼 LinkedIn' }
+            { url: 'https://github.com/Calonca', label: 'GitHub' },
+            { url: 'https://www.linkedin.com/in/alessandro-la-conca/', label: 'LinkedIn' }
           ]"
         />
         <TeamMember
           name="Tolcrein"
-          role="Noise Functions & Visual Design"
-          description="Specialized in developing noise functions for terrain generation and creating project showcase images for visual presentation."
+          role="Noise & Visual Design"
+          description="Develops noise functions for terrain generation and creates the project's showcase imagery."
           :links="[
-            { url: 'https://github.com/Tolcrein', label: '🐙 GitHub' }
+            { url: 'https://github.com/Tolcrein', label: 'GitHub' }
           ]"
         />
         <TeamMember
           name="Metto"
-          role="Demo & Movement Systems"
-          description="Focused on improving player movement systems in demo scenes and enhancing the overall user experience and interaction design."
+          role="Demo & Movement"
+          description="Improves player movement in the demo scenes and the overall feel of interaction."
           :links="[
-            { url: 'https://www.linkedin.com/in/emanuele-orlando-0864a5282/', label: '💼 LinkedIn' }
+            { url: 'https://www.linkedin.com/in/emanuele-orlando-0864a5282/', label: 'LinkedIn' }
           ]"
         />
         <TeamMember
           name="BackupMiles"
           role="Documentation"
-          description="Documentation generation from articles and API reference"
+          description="Documentation and API reference generated from articles and source."
           :links="[
-            { url: 'https://github.com/BackupMiles', label: '🐙 GitHub' }
+            { url: 'https://github.com/BackupMiles', label: 'GitHub' }
           ]"
         />
         <div class="contribute-card">
-          <div class="contribute-icon">🚀</div>
-          <h3>Your Name Here?</h3>
+          <TorusCanvas />
+          <div class="member-avatar" aria-hidden="true"></div>
+          <h3>Your name here?</h3>
           <p class="member-role">Future Contributor</p>
-          <p>We're always looking for passionate developers to join our open source community. Whether
-            you're interested in Godot development, procedural generation, or AI integration, there's a
-            place for you!</p>
+          <p>Coders, artists, and worldbuilders welcome. If you're into Godot or procedural worlds,
+            there's a place for you.</p>
           <div class="contribute-actions">
-            <a href="https://discord.gg/bfCcWkstRB" class="btn btn-primary">
-              💬 Join Discord Community
-            </a>
+            <a href="https://discord.gg/bfCcWkstRB" class="btn btn-secondary">Join the Discord</a>
           </div>
-          <p class="contribute-note">Start by joining our Discord to discuss ideas, get help with setup,
-            and connect with other contributors!</p>
+          <p class="contribute-note">Start there to discuss ideas, get help with setup, and meet other
+            contributors.</p>
         </div>
       </div>
     </div>
@@ -63,4 +63,5 @@
 
 <script setup lang="ts">
 import TeamMember from '../ui/TeamMember.vue'
+import TorusCanvas from '../ui/TorusCanvas.vue'
 </script>

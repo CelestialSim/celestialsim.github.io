@@ -1,53 +1,40 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* CelestialSim — "Cartographic instrument" design tokens
+   Identity derived from terrain elevation data: a teal -> gold -> snow ramp
+   over a deep abyssal base, with faint gold contour lines as connective texture. */
+
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  /* Elevation ramp + surfaces */
+  --abyss: #0b1120;        /* page background (ocean deep) */
+  --abyss-2: #0d1526;      /* alternate section background */
+  --panel: #111a2b;        /* card / panel */
+  --panel-2: #16223a;      /* raised panel / hover */
+  --sea: #2e8c8c;          /* sea-level teal (secondary accent) */
+  --sea-bright: #45b3b0;
+  --terra: #c8a24b;        /* land / rock gold (primary accent) */
+  --terra-bright: #e2ba63;
+  --veg: #6e9f5b;          /* vegetation green (scatter accent, used sparingly) */
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  /* Text */
+  --snow: #f2efe6;         /* headings / peaks */
+  --snow-mute: #b9c2ce;    /* body */
+  --snow-dim: #7c8798;     /* captions / muted */
 
-  --vt-c-indigo: #2c3e50;
+  /* Lines & texture */
+  --line: rgba(200, 162, 75, 0.18);   /* gold hairline / contour */
+  --line-cool: rgba(120, 150, 180, 0.12);
+  --line-strong: rgba(200, 162, 75, 0.4);
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  /* Type */
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
+  /* Layout */
+  --maxw: 1180px;
+  --radius: 14px;
+  --radius-sm: 8px;
 
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+  color-scheme: dark;
 }
 
 *,
@@ -55,32 +42,35 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
-  line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
+  background: var(--abyss);
+  color: var(--snow-mute);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

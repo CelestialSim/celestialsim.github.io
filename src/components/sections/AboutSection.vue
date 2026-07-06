@@ -1,37 +1,29 @@
 <template>
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">About CelestialSim</h2>
-      <div class="about-content-grid">
+      <div class="about-grid">
         <div class="about-text">
+          <p class="eyebrow">What it is</p>
           <p>
-            CelestialSim is a <strong>free and open source</strong> tool designed for Godot that enables
-            rapid procedural terrain
-            generation and simulation. Built by developers for developers, it leverages dynamic
-            Level-of-Detail (LOD) to
-            ensure smooth, real-time rendering even for complex planetary environments.
+            CelestialSim is a <strong>free, open-source Godot plugin</strong> for building
+            planet-scale worlds. It runs right inside the editor, so the planet you shape is the planet
+            you play — a single node grows an entire world.
           </p>
           <p>
-            What sets CelestialSim apart is its <strong>AI-first architecture</strong> and open
-            source community. The tool creates
-            embedding-compatible representations of generated worlds, making it seamlessly integrate
-            with AI models for
-            intelligent exploration and content discovery. This opens up exciting possibilities for
-            automated
-            terrain analysis, point-of-interest detection, and AI-assisted world building.
+            Everything renders in <strong>real time</strong> and stays smooth as you move. Detail appears
+            where you are and fades away where you aren't, with no pop-in — so whether you're blocking out
+            a level or crafting a hero location, you work at full quality without waiting on bakes.
           </p>
           <p>
-            Whether you're developing expansive open-world games or need dynamic terrain for simulation
-            purposes, CelestialSim provides the foundation for creating immersive, procedurally
-            generated
-            environments with cutting-edge performance and AI integration capabilities. <strong>Join our
-              growing
-              community of contributors and help shape the future of procedural generation!</strong>
+            Best of all, it <strong>fits how you already work</strong>. Build terrain on the GPU for
+            speed, hand it to CPU workers when your tools live there, or pull in data from anywhere.
+            CelestialSim slots into your pipeline instead of asking you to change it.
           </p>
+          <p class="about-meta">Free &amp; open source · Godot 4 · Windows, macOS, Linux &amp; Android</p>
         </div>
-        <div class="about-images">
-          <img src="/image1.webp" alt="CelestialSim Terrain Generation" class="about-image">
-          <img src="/image2.webp" alt="CelestialSim Procedural Features" class="about-image">
+        <div class="about-media">
+          <img src="/image1.webp" alt="A CelestialSim planet with real-time level-of-detail terrain" class="about-image">
+          <img src="/image2.webp" alt="Close-up of procedurally generated CelestialSim terrain" class="about-image">
         </div>
       </div>
     </div>
@@ -39,5 +31,5 @@
 </template>
 
 <script setup lang="ts">
-// About section component
+// About section
 </script>

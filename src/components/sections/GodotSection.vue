@@ -1,39 +1,45 @@
 <template>
-  <section id="godot" class="section section-alt">
+  <section id="install" class="section">
     <div class="container">
-      <h2 class="section-title">Godot Version Coming Soon</h2>
-      <div class="godot-announcement">
-        <div class="godot-content">
-          <div class="godot-icon">🎮</div>
-          <h3>Native Godot Plugin in Development</h3>
-          <p>We're working on a full-featured Godot plugin that will bring CelestialSim's powerful
-            procedural generation directly into your Godot projects. The plugin will include:</p>
-          <ul class="godot-features">
-            <li>✨ Easy-to-use procedural terrain generation nodes</li>
-            <li>🎯 Real-time LOD system optimized for Godot</li>
-            <li>🌍 Customizable planet and biome generation</li>
-            <li>⚡ GPU-accelerated compute shaders</li>
-            <li>🔧 Full editor integration and visual tools</li>
-          </ul>
-          <div class="godot-cta">
-            <p><strong>Want to be the first to know when it's ready?</strong></p>
-            <div class="godot-buttons">
-              <a href="https://discord.gg/bfCcWkstRB" class="btn btn-primary">
-                💬 Join Discord for Updates
-              </a>
-              <a href="https://github.com/CelestialSim/web-demo" class="btn btn-secondary">
-                ⭐ Star Demo on GitHub
-              </a>
-            </div>
-            <p class="godot-note">Join our Discord for exclusive early access, development updates, and
-              to help shape the plugin's features!</p>
-          </div>
+      <div class="section-head">
+        <p class="eyebrow">Get started</p>
+        <h2 class="section-title">Add it to your Godot project</h2>
+        <p class="section-intro">
+          CelestialSim ships as a prebuilt addon for Windows, macOS, Linux, and Android. No Rust
+          toolchain and no shader compiler needed — download, drop it in, and add a node.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Download the release</h3>
+          <p>Grab the latest <code>celestialsim-&lt;version&gt;.zip</code> from the releases page and unzip it.</p>
         </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>Copy the addon</h3>
+          <p>Move <code>addons/celestialsim/</code> into your project's <code>addons/</code> folder and open it in Godot.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>Add the node</h3>
+          <p>Drop a <code>Celestial</code> node into a scene and press play — you have a planet.</p>
+        </div>
+      </div>
+
+      <div class="get-started-cta">
+        <a href="https://github.com/CelestialSim/CelestialSim/releases" class="btn btn-primary">Download for Godot</a>
+        <a href="https://celestialsim.github.io/CelestialSim/" class="btn btn-secondary">Read the docs</a>
+      </div>
+      <div class="dev-note">
+        <span class="dot"></span>
+        Beta release — expect breaking changes while the APIs settle.
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-// Godot announcement section
+// Get started / install section
 </script>

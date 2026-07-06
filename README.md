@@ -10,7 +10,7 @@ Experience real-time planetary generation with dynamic Level-of-Detail rendering
 # How to build the website
 
 ```bash
-bun install # Install dependencies
-bun run dev # Start development server
-bun run build # Build for production
+npm install # Install dependencies
+npm run dev # Start development server
+npm run build # Build for production
 ```
